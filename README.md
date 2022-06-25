@@ -1,2 +1,2 @@
 # web2
-HTML/JavaScript
+JavaScript
