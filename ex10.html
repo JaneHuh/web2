@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script> //객체 object
+    //객체란 서로 연관된 변수와 함수를 그룹핑한 그릇
+    //객체 내의 변수를 프로퍼티(property) 함수를 메소드(method)라고 부른다.
+      var coworkers = { //오브젝트(객체)
+        "programmer":"egoing", //프로퍼티(속성): 객체 내의 변수
+        "designer":"leezche"
+      };
+      document.write("programmer : "+coworkers.programmer+"<br>");
+      document.write("designer : "+coworkers.designer+"<br>");
+      coworkers.bookkeeper = "duru"; //객체 추가
+      document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+      coworkers["data scientist"] = "taeho"; //띄어쓰기 포함 -> . 대신 대괄호['프로퍼티명'] 사용
+      document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){ //cowerkers 객체의 key값: programmer, designer, bookkeeper, data scientist, 배열(array): key 대신 index
+        document.write(key+' : '+coworkers[key]+'<bar>');
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function(){
+        for (var key in this){ //함수 엔에서 소속된 객체: this
+          document.write(key+':'+this[key]+'<br>');
+        }
+      }
+      coworkers.showAll(); //Method: 객체에 소속된 함수
+    </script>
+  </body>
+</html>
